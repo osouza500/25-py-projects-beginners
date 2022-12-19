@@ -2,9 +2,11 @@ from art import text2art
 import random
 import time
 
+
 def printar_pausar(mensagem):
     time.sleep(1)
     print(mensagem)
+
 
 def continuar_sair():
     while True:
@@ -19,14 +21,15 @@ def continuar_sair():
         else:
             printar_pausar("Input inválido.")
 
+
 def sentenca_aleatoria(nome, subst):
     sentenca = random.choice([
         f"{nome} comeu um(a) {subst} estragad@ e passou mal.",
-        f"{nome} foi à guerra e atirou um(a) {subst} em um prussiano.",
+        f"{nome} atirou um(a) {subst} em um prussiano.",
         f"{nome} foi pres@ ao roubar um(a) {subst}.",
         f"{nome} atropelou um(a) {subst}.",
         f"{nome} tropeçou em um(a) {subst}.",
-        f"{nome} foi ao pomar e colheu um(a) {subst}.",
+        f"{nome} foi ao pomar colher um(a) {subst}.",
         f"{nome} deu um(a) {subst} a um padre.",
         f"{nome} temperou o frango com {subst}.",
         f"{nome} escreveu um código usando um(a) {subst}.",
@@ -34,6 +37,7 @@ def sentenca_aleatoria(nome, subst):
         f"{nome} assaltou um banco usando um(a) {subst}."
     ])
     return sentenca
+
 
 def mad_libs():
     print("Bem-vind@ a...\n")
@@ -50,4 +54,6 @@ def mad_libs():
     print("")
     continuar_sair()
 
-mad_libs()
+
+if __name__ == "__main__":
+    mad_libs()
