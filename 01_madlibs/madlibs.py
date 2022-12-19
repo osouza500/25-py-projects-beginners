@@ -5,6 +5,7 @@ def continuar_sair():
     while True:
         print("Jogar outra vez? (S/n)")
         resposta = input().lower()
+        print("")
         if resposta == "s":
             mad_libs()
         elif resposta == "n":
@@ -13,32 +14,32 @@ def continuar_sair():
         else:
             print("Input inválido.")
 
+def sentenca_aleatoria(nome, subst):
+    sentenca = random.choice([
+        f"{nome} comeu um(a) {subst} estragad@ e passou mal.",
+        f"{nome} foi à guerra e atirou um(a) {subst} em um prussiano.",
+        f"{nome} foi pres@ porque roubou um(a) {subst}.",
+        f"{nome} atropelou um(a) {subst} e fugiu sem prestar socorro."
+        f"{nome} tropeçou em um(a) {subst}, caiu e foi hospitalizad@.",
+        f"{nome} foi ao pomar e colheu um(a) {subst}.",
+        f"{nome} deu um(a) {subst} a um padre.",
+        f"{nome} temperou o frango com {subst}.",
+        f"{nome} escreveu um código usando um(a) {subst}.",
+        f"{nome} trocou seu computador por um(a) {subst}.",
+        f"{nome} assaltou um banco usando um(a) {subst}."
+    ])
+    return sentenca
+
 def mad_libs():
     print("Bem-vind@ a...\n")
     print(text2art("Mad Libs!"))
     print("Digite um nome próprio:")
-    nome_proprio = input()
+    nome_proprio = input().capitalize()
     print("")
     print("Agora, digite um substantivo no singular:")
     substantivo = input().lower()
     print("Gerando sentença...")
-    sentencas = [
-        f"{nome_proprio} comeu um(a) {substantivo} estragad@, "
-         "passou mal e desmaiou.",
-        f"{nome_proprio} foi à guerra e atirou um(a) {substantivo} "
-         "em um soldado prussiano.",
-        f"{nome_proprio} foi pres@ porque roubou um(a) {substantivo}.",
-        f"{nome_proprio} atropelou um(a) {substantivo} e fugiu sem "
-         "prestar socorro.",
-        f"Desastrad@, {nome_proprio} tropeçou em um(a) {substantivo}, "
-         "caiu e foi hospitalizad@.",
-        f"Sem motivo para tal, {nome_proprio} amarrou um(a) {substantivo} "
-         "em uma árvore e ficou ali observando.",
-        f"O cachorro de {nome_proprio} comeu um {substantivo} e enlouqueceu."
-        f"O gato de {nome_proprio} adora arranhar {substantivo}."
-    ]
-    print(random.choice(sentencas))
+    print(sentenca_aleatoria(nome_proprio, substantivo))
     continuar_sair()
-
 
 mad_libs()
