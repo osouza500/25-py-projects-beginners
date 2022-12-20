@@ -35,9 +35,11 @@ def adivinhe_numero(numero):
             elif numero_usuario < numero_maquina:
                 printar_pausar("Chutou baixo. Tente novamente.\n")
         except ValueError:
-            printar_pausar("Input inválido.\n")        
+            printar_pausar("Input inválido.\n")
     printar_pausar(f"Acertou! o número escolhido pela "
                    f"máquina foi {numero_maquina}.\n")
     continuar_sair()
 
-adivinhe_numero(10)
+
+if __name__ == "__main__":
+    adivinhe_numero(10)
