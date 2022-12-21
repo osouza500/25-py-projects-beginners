@@ -24,17 +24,16 @@ def continuar_sair():
 def input_usuario():
     printar_pausar("Bem-vind@ a Adivinhe o Número!!!")
     while True:
-            printar_pausar("Escolha um número de 1 a 10. "
-                           "O computador tentará adivinhá-lo.")
-            try: 
-                resposta = int(input())
-                print("")
-                if resposta <= 0 or resposta > 10:
-                    printar_pausar("Input inválido.\n")
-                ai_computador(resposta)
-            except ValueError:
+        printar_pausar("Escolha um número de 1 a 10. "
+                       "O computador tentará adivinhá-lo.")
+        try:
+            resposta = int(input())
+            print("")
+            if resposta <= 0 or resposta > 10:
                 printar_pausar("Input inválido.\n")
-        
+            ai_computador(resposta)
+        except ValueError:
+            printar_pausar("Input inválido.\n")
 
 
 def ai_computador(numero):
@@ -48,7 +47,7 @@ def ai_computador(numero):
                                "mais uma vez.\n")
             else:
                 printar_pausar("Acertei! O número que você "
-                              f"escolheu é {numero}!\n")
+                               f"escolheu é {numero}!\n")
                 continuar_sair()
             tentativas.append(jogada_computador)
         else:
